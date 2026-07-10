@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Stack Matchmaker - Recommendation Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1 id="main-title">Tech Stack Matchmaker</h1>
+            <p id="main-subtitle">Input-Process-Output Content-Based Recommendation Engine</p>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Left Panel: Input Section -->
+            <section class="panel input-panel" aria-labelledby="input-heading">
+                <h2 id="input-heading">Select Technical Skills</h2>
+                <p class="instruction">Choose exactly three skills from your current stack to find matching roles.</p>
+                
+                <form id="recommendation-form" novalidate>
+                    <div class="form-group">
+                        <label for="skill-1">Primary Skill</label>
+                        <select id="skill-1" name="skill-1" class="skill-select" required>
+                            <option value="" disabled selected>Select skill...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skill-2">Secondary Skill</label>
+                        <select id="skill-2" name="skill-2" class="skill-select" required>
+                            <option value="" disabled selected>Select skill...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skill-3">Tertiary Skill</label>
+                        <select id="skill-3" name="skill-3" class="skill-select" required>
+                            <option value="" disabled selected>Select skill...</option>
+                        </select>
+                    </div>
+
+                    <div id="validation-message" class="error-message hidden" role="alert"></div>
+
+                    <button type="submit" id="submit-btn" class="btn btn-primary">Find Matches</button>
+                </form>
+            </section>
+
+            <!-- Right Panel: Output Section -->
+            <section class="panel output-panel" aria-labelledby="output-heading">
+                <div class="panel-header">
+                    <h2 id="output-heading">Recommended Job Roles</h2>
+                    <span id="status-badge" class="badge badge-neutral">Ready</span>
+                </div>
+
+                <div id="results-container" class="results-container">
+                    <div class="placeholder-state">
+                        <p>Select your tech stack and click "Find Matches" to view personalized recommendations.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="dashboard-footer">
+            <p>Content-Based Tech Stack Recommendation Engine | Strict 4-Step Pipeline</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
